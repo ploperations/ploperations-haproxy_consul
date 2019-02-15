@@ -1,1 +1,4 @@
 ---
+haproxy_consul::puppet_ca_files::haproxy_cert_dir: '/etc/haproxy/certs.d'
+haproxy_consul::puppet_ca_files::puppet_ca_file_name: 'puppet_ca.pem'
+haproxy_consul::puppet_ca_files::puppet_crl_file_name: 'puppet-crl.pem'
