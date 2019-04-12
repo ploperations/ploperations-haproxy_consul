@@ -2,13 +2,17 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [1.0.0](https://github.com/ploperations/ploperations-haproxy_consul/tree/1.0.0) (2019-04-12)
+## [1.0.1](https://github.com/ploperations/ploperations-haproxy_consul/tree/1.0.1) (2019-04-12)
 
-[Full Changelog](https://github.com/ploperations/ploperations-haproxy_consul/compare/4fb8772161b7037c7dfc4788949dc467cea8624e...1.0.0)
+[Full Changelog](https://github.com/ploperations/ploperations-haproxy_consul/compare/4fb8772161b7037c7dfc4788949dc467cea8624e...1.0.1)
 
 ### Added
 
 - Initial version of this module [\#1](https://github.com/ploperations/ploperations-haproxy_consul/pull/1) ([genebean](https://github.com/genebean))
+
+### Fixed
+
+- Added parameter for resolver name [\#3](https://github.com/ploperations/ploperations-haproxy_consul/pull/3) ([genebean](https://github.com/genebean))
 
 
 
