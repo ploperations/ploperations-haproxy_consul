@@ -1,6 +1,6 @@
 {
   "name": "ploperations-haproxy_consul",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "ploperations",
   "summary": "Helpers for using Consul with HAProxy",
   "license": "Apache-2.0",
