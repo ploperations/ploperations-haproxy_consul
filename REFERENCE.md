@@ -104,6 +104,15 @@ The full url to your Consul server including protocol and port
 
 Default value: $title
 
+##### `resolver_name`
+
+Data type: `String[1]`
+
+The name of the resolver that will be referenced in the balancemember's options
+Defaults to 'consul'
+
+Default value: 'consul'
+
 ##### `resolve_retries`
 
 Data type: `Integer`
