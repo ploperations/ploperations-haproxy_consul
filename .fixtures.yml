@@ -3,4 +3,8 @@
 ---
 fixtures:
   forge_modules:
-#     stdlib: "puppetlabs/stdlib"
+    concat: 'puppetlabs/concat' # required by haproxy
+    # consul_data: mocking instead of pullling in the actuall module
+    firewall: 'puppetlabs/firewall'
+    haproxy: 'puppetlabs/haproxy'
+    stdlib: 'puppetlabs/stdlib'
