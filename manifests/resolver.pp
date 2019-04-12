@@ -11,6 +11,9 @@
 #
 # @param consul_server
 #   The full url to your Consul server including protocol and port
+# @param resolver_name
+#   The name of the resolver that will be referenced in the balancemember's options
+#   Defaults to 'consul'
 # @param resolve_retries
 #   Defines the number <nb> of queries to send to resolve a server name before
 #    giving up. Defaults to 3.
@@ -24,6 +27,7 @@
 # @see haproxy::resolver for more details on HAProxy-related parameters
 define haproxy_consul::resolver(
   Stdlib::Httpurl $consul_server = $title,
+  String[1] $resolver_name = 'consul',
   Integer $resolve_retries = 3,
   Hash $timeout = { 'retry' => '2s' },
   Optional[Hash] $hold = undef,
@@ -37,7 +41,7 @@ define haproxy_consul::resolver(
     $memo + { "${nameserver['Node']}" => "${nameserver['Address']}:${consul_dns_port}" }
   }
 
-  haproxy::resolver { 'consul':
+  haproxy::resolver { $resolver_name:
     nameservers           => $nameserver_hash,
     resolve_retries       => $resolve_retries,
     timeout               => $timeout,
