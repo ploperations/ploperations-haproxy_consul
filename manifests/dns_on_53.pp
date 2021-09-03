@@ -17,13 +17,13 @@ class haproxy_consul::dns_on_53 {
       dport   => 53,
       jump    => 'REDIRECT',
       toports => 8600,
-    ;
+      ;
     '102 forward incoming UDP port 53 to 8600':
       proto => 'udp',
-    ;
+      ;
     '102 forward incoming TCP port 53 to 8600':
       proto => 'tcp',
-    ;
+      ;
   }
 
   firewall {
@@ -34,12 +34,12 @@ class haproxy_consul::dns_on_53 {
       dport       => 53,
       jump        => 'REDIRECT',
       toports     => 8600,
-    ;
+      ;
     '102 forward outgoing UDP port 8600 to 53':
       proto => 'udp',
-    ;
+      ;
     '102 forward outgoing TCP port 8600 to 53':
       proto => 'tcp',
-    ;
+      ;
   }
 }

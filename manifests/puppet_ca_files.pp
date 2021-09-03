@@ -37,16 +37,16 @@ class haproxy_consul::puppet_ca_files (
       mode    => '0644',
       require => Exec["create ${haproxy_cert_dir}"],
       notify  => Haproxy::Service['haproxy'],
-    ;
+      ;
     $haproxy_cert_dir:
       ensure => directory,
       mode   => '0755',
-    ;
+      ;
     $_puppet_ca_file:
       source => '/etc/puppetlabs/puppet/ssl/certs/ca.pem',
-    ;
+      ;
     $_puppet_crl_file:
       source => '/etc/puppetlabs/puppet/ssl/crl.pem'
-    ;
+      ;
   }
 }
