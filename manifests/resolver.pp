@@ -25,7 +25,7 @@
 #     based on last valid resolution status. Defaults to undef
 #
 # @see haproxy::resolver for more details on HAProxy-related parameters
-define haproxy_consul::resolver(
+define haproxy_consul::resolver (
   Stdlib::Httpurl $consul_server = $title,
   String[1] $resolver_name = 'consul',
   Integer $resolve_retries = 3,
@@ -37,7 +37,7 @@ define haproxy_consul::resolver(
   $consul_name_servers = consul_data::get_service_nodes($consul_server, 'consul')
   $consul_dns_port = pick(consul_data::get_key($consul_server, 'consul-dns/port'), '8600')
 
-  $nameserver_hash = $consul_name_servers.reduce( {} ) |$memo, $nameserver| {
+  $nameserver_hash = $consul_name_servers.reduce( {}) |$memo, $nameserver| {
     $memo + { "${nameserver['Node']}" => "${nameserver['Address']}:${consul_dns_port}" }
   }
 
